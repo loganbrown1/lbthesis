@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Recipe Photo Study</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <base href="https://icarus.cs.weber.edu/~lb09652/preliminary/">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/star-rating.min.css">
+    <link rel="stylesheet" href="css/theme.min.css">
+    <link rel="stylesheet" href="css/base.css?v=1.0.2">
+</head>
+
+<body ng-app="thesisStudy" ng-controller="IndexCtrl">
+<!-- JavaScript -->
+<script src="https://kit.fontawesome.com/ea3b010e7f.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/star-rating.min.js"></script>
+<script src="js/theme.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.0/dist/chart.min.js"></script>
+
+
+<!-- Angular Scripts -->
+<script type="text/javascript" src="js/app.js?v=1.0.2"></script>
+<script type="text/javascript" src="js/index.controller.js?v=1.0.2"></script>
+<script type="text/javascript" src="js/results.controller.js?v=1.0.2"></script>
+
+<div id="nav_bar">
+<!--    Put Nav elements here-->
+</div>
+
+<div class="container" id="container">
+    <div ng-view><!--viewport for angular --></div>
+</div>
+
+<div class="footer">
+
+</div>
+</body>
+</html>

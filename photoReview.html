@@ -1,0 +1,62 @@
+<div id="photoReview">
+    <div class="container">
+        <div class="card mt-2 mb-2">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col">Photo Review</div>
+                    <div class="col">
+                        <div class="float-right">
+                            Photo {{data.currentPhoto}}/{{data.photoList.length}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h3 class="text-center">{{data.currentPhotoTitle}}</h3>
+                <div class="d-flex justify-content-center">
+                    <img class="reviewPhoto img-fluid" src="{{data.currentPhotoLocation}}">
+                </div>
+                <div class="d-flex justify-content-center mt-3">
+                    <label for="rating-1" class="mb-0">Please rate this image and click Submit to advance:</label>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a href="#"><input type="number" class="rating" id="rating-1"></a>
+                </div>
+                <div class="d-flex justify-content-center mt-1 input-group">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="reason">Problem (if any): </label>
+                    </div>
+                    <select class="custom-select" name="reason" id="reason" style="max-width: 294px;"
+                            ng-model="data.problem" ng-change="isOther()">
+                        <option value="0" ng-selected="!data.problem">---</option>
+                        <option value="1">Too dark</option>
+                        <option value="2">Blurry or unclear</option>
+                        <option value="3">Looks poorly prepared or cooked</option>
+                        <option value="4">Looks unappealing</option>
+                        <option value="5">Other</option>
+                    </select>
+                </div>
+                <div id="otherReasonBox" class="d-flex justify-content-center mt-1 input-group" ng-show="data.showOtherReasonBox">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="otherReason">Other:</label>
+                    </div>
+                    <input class="form-control" id="otherReason" type="text" style="max-width: 365px;" ng-model="data.otherReason">
+                </div>
+                <div id="submit-error" class="text-danger small text-center d-none">Please select a rating before continuing.</div>
+                <div class="d-flex justify-content-center mt-2">
+                    <button class="btn btn-primary" ng-click="submitRating()">Submit</button>
+                </div>
+                <div class="small text-right mt-2 mb-0" ng-show="isDisabled">Saving new ratings is currently disabled.</div>
+                <div class="small text-right mt-2 mb-0">Recipes and images gathered from AllRecipes.com.</div>
+            </div>
+<!--            <div class="card-footer">-->
+<!--                <button class="btn btn-outline-dark float-right">Pause</button>-->
+<!--            </div>-->
+        </div>
+<!--        <div class="d-flex justify-content-center">-->
+<!--            <h5 class="mr-2">Debug Log: </h5>-->
+<!--            <br>-->
+<!--            <textarea name="debugLog" id="debugLog" cols="80" rows="10" ng-model="debugLog"></textarea>-->
+<!--        </div>-->
+    </div>
+</div>

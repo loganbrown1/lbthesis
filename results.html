@@ -1,0 +1,40 @@
+<div id="results">
+  <div class="container">
+    <div>
+      <canvas id="firstChart"></canvas>
+    </div>
+    <h2>Appendix A: Individual Image Results</h2>
+    <div class="row mt-5 card-header" style="page-break-inside: avoid;" ng-repeat="photo in data.individualPhotos" ng-show="photo.imageID > 0">
+      <div class="col-12 col-md-3" >
+        <img src="{{photo.link}}" alt="" class="col-12">
+        <div>{{photo.title}} ({{photo.imageID}})</div>
+        <div>Average Rating: {{photo.averageRating}} stars</div>
+        <div>Number of Ratings: {{photo.numRatings}}</div>
+      </div>
+      <div class="col-12 col-md-4">
+        <canvas id="photo-{{photo.imageID}}-ratings"></canvas>
+      </div>
+      <div class="col-12 col-md-5">
+        <canvas id="photo-{{photo.imageID}}-problems"></canvas>
+      </div>
+      <div class="col-12"><button class="btn btn-info float-right m-1" type="button" data-toggle="collapse" data-target="#photo-{{photo.imageID}}-other-reasons" aria-controls="photo-{{photo.imageID}}-other-reasons">Toggle other reasons</button></div>
+      <div class="col-12 collapse" id="photo-{{photo.imageID}}-other-reasons">
+        <div class="card card-body" ng-repeat="reason in photo.reasons track by $index">{{reason}}</div>
+      </div>
+    </div>
+
+    <h2 style="page-break-before: always;">Appendix B: Individual Session Results</h2>
+    <div class="row mt-5 card-header" style="page-break-inside: avoid;"  ng-repeat="session in data.individualSessions" on-finish-render="ngRepeatFinished">
+        <div class="col-12 col-md-3">
+            <div>Session: {{session.sessionID}}</div>
+            <div>Total Ratings: {{session.totalRatings}}</div>
+        </div>
+        <div class="col-12 col-md-4">
+            <canvas id="session-{{session.sessionID}}-ratings"></canvas>
+        </div>
+        <div class="col-12 col-md-5">
+            <canvas id="session-{{session.sessionID}}-problems"></canvas>
+        </div>
+    </div>
+  </div>
+</div>
